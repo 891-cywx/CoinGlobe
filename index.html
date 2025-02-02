@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinGlobe - Moedas Globais</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding-top: 80px;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: var(--primary-color) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+
+        .currency-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .currency-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .table-currencies {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .table-currencies th {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .contact-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .flag-icon {
+            width: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 3px;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white !important;
+            border-radius: 50px;
+            padding: 12px 25px;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .animated-title {
+            animation: titleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">
+                <i class="fas fa-coins me-2"></i>CoinGlobe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#moedas">Moedas</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#top">Top Valores</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="animated-title mb-4 display-4 fw-bold">Explore as Moedas do Mundo</h1>
+            <p class="lead mb-4">Dados atualizados de todas as moedas globais em tempo real</p>
+            <div class="d-flex gap-3 justify-content-center">
+                <a href="#moedas" class="btn btn-light btn-lg">Ver Moedas</a>
+                <a href="#contato" class="btn btn-outline-light btn-lg">Contato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moedas Section -->
+    <section id="moedas" class="container mb-5">
+        <h2 class="text-center mb-5 fw-bold">Lista Completa de Moedas</h2>
+        
+        <div class="table-currencies">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>Bandeira</th>
+                        <th>Moeda</th>
+                        <th>Código</th>
+                        <th>Valor (USD)</th>
+                        <th>Variação 24h</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://flagcdn.com/us.svg" class="flag-icon" alt="EUA"></td>
+                        <td>Dólar Americano</td>
+                        <td>USD</td>
+                        <td>1.0000</td>
+                        <td class="text-success">+0.12%</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/eu.svg" class="flag-icon" alt="União Europeia"></td>
+                        <td>Euro</td>
+                        <td>EUR</td>
+                        <td>0.9300</td>
+                        <td class="text-danger">-0.30%</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/gb.svg" class="flag-icon" alt="Reino Unido"></td>
+                        <td>Libra Esterlina</td>
+                        <td>GBP</td>
+                        <td>0.7900</td>
+                        <td class="text-success">+0.25%</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/jp.svg" class="flag-icon" alt="Japão"></td>
+                        <td>Iene Japonês</td>
+                        <td>JPY</td>
+                        <td>148.5000</td>
+                        <td class="text-success">+0.18%</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/cn.svg" class="flag-icon" alt="China"></td>
+                        <td>Yuan Chinês</td>
+                        <td>CNY</td>
+                        <td>7.3000</td>
+                        <td class="text-danger">-0.50%</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/ch.svg" class="flag-icon" alt="Suíça"></td>
+                        <td>Franco Suíço</td>
+                        <td>CHF</td>
+                        <td>0.8900</td>
+                        <td class="text-success">+0.40%</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/ca.svg" class="flag-icon" alt="Canadá"></td>
+                        <td>Dólar Canadense</td>
+                        <td>CAD</td>
+                        <td>1.3500</td>
+                        <td class="text-success">+0.15%</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/au.svg" class="flag-icon" alt="Austrália"></td>
+                        <td>Dólar Australiano</td>
+                        <td>AUD</td>
+                        <td>1.5600</td>
+                        <td class="text-danger">-0.20%</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/in.svg" class="flag-icon" alt="Índia"></td>
+                        <td>Rúpia Indiana</td>
+                        <td>INR</td>
+                        <td>83.2000</td>
+                        <td class="text-success">+0.10%</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://flagcdn.com/br.svg" class="flag-icon" alt="Brasil"></td>
+                        <td>Real Brasileiro</td>
+                        <td>BRL</td>
+                        <td>5.2500</td>
+                        <td class="text-danger">-0.45%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Top Valores Section -->
+    <section id="top" class="container mb-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="currency-card card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h4><i class="fas fa-crown me-2"></i>Moeda Mais Valorizada</h4>
+                    </div>
+                    <div class="card-body">
+                        <h3>Dinar Kuwaitiano (KWD)</h3>
+                        <p class="fs-4">1 KWD = 3.26 USD</p>
+                        <p>Principais fatores:</p>
+                        <ul>
+                            <li>Grandes reservas de petróleo</li>
+                            <li>Política monetária estável</li>
+                            <li>PIB per capita elevado</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="currency-card card h-100">
+                    <div class="card-header bg-danger text-white">
+                        <h4><i class="fas fa-exclamation-triangle me-2"></i>Moeda Mais Desvalorizada</h4>
+                    </div>
+                    <div class="card-body">
+                        <h3>Bolívar Venezuelano (VES)</h3>
+                        <p class="fs-4">1 USD = 3,488,472 VES</p>
+                        <p>Principais fatores:</p>
+                        <ul>
+                            <li>Hiperinflação crônica</li>
+                            <li>Instabilidade política</li>
+                            <li>Sanções internacionais</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="container mb-5">
+        <div class="contact-section">
+            <h2 class="text-center mb-4 fw-bold">Fale Conosco</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0">
+                        <div class="card-body">
+                            <h4><i class="fas fa-phone-alt me-2"></i>Contato Direto</h4>
+                            <p class="fs-5 mt-3">
+                                <a href="tel:21967602765" class="text-decoration-none">
+                                    <i class="fab fa-whatsapp me-2"></i>(21) 96760-2765
+                                </a>
+                            </p>
+                            <a href="https://wa.me/5521967602765?text=Olá,%20vim%20pelo%20site%20CoinGlobe" 
+                               class="btn whatsapp-btn"
+                               target="_blank">
+                                <i class="fab fa-whatsapp me-2"></i>Chamar no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="Seu nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" class="form-control" rows="4" placeholder="Sua mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">
+                © 2023 CoinGlobe - Todos os direitos reservados<br>
+                <small>Dados atualizados diariamente via API oficial</small>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Configuração do WhatsApp
+        document.querySelector('.whatsapp-btn').addEventListener('click', function(e) {
+            window.open(this.href, '_blank', 'noopener,noreferrer');
+        });
+
+        // Configuração do Formulário
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Substitua este email pelo seu
+            const serviceID = 'service_abc123';
+            const templateID = 'template_xyz456';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    alert('Mensagem enviada com sucesso!');
+                    this.reset();
+                }, (err) => {
+                    alert('Erro ao enviar: ' + JSON.stringify(err));
+                });
+        });
+    </script>
+    <!-- Adicione o EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Inicialize o EmailJS com seu User ID
+        (function() {
+            emailjs.init('SEU_USER_ID_DO_EMAILJS');
+        })();
+    </script>
+</body>
+</html>
